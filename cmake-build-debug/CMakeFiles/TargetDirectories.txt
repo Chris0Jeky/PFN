@@ -1,0 +1,3 @@
+/cygdrive/c/Users/jekyt/Desktop/Printer Config/Others/Git/PFN/cmake-build-debug/CMakeFiles/PFN.dir
+/cygdrive/c/Users/jekyt/Desktop/Printer Config/Others/Git/PFN/cmake-build-debug/CMakeFiles/edit_cache.dir
+/cygdrive/c/Users/jekyt/Desktop/Printer Config/Others/Git/PFN/cmake-build-debug/CMakeFiles/rebuild_cache.dir
