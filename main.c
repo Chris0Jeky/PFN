@@ -5,6 +5,18 @@
 #include <fcntl.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <string.h>
+
+//How to use:
+// Compile this file
+// then run the executable with root/superuser privilages
+// example:
+
+// gcc <nameOfTheFile.c> -o getPfn.exe
+// sudo getPfn.exe
+
+
+//note: it has been tested on Linux Mint, and no other distributions, but it should work on a wide variety of Linux systems
 
 // Function to read the PFN for a given virtual address
 uint64_t read_pfn(uint64_t virtual_address) {
