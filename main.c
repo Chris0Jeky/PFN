@@ -71,3 +71,8 @@ int main() {
         fscanf(maps_file, "%*[^\n]\n");
     }
 
+    // Close the /proc/self/maps file
+    fclose(maps_file);
+
+    return 0;
+}
