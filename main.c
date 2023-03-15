@@ -51,9 +51,11 @@ int main() {
     char perms[5];
 
     // Read the memory regions from the /proc/self/maps file
-    while (fscanf(maps_file, "%lx-%lx %s", &start, &end, perms) == 3) {
-        // Check if the region has the 's' flag (stack region)
-        if (perms[3] == 's') {
+    char line[1024];
+    while (fgets(line, sizeof(line), maps_file) != NULL) {
+        int fields = sscanf(line, "%lx-%lx %s", &start, &end, perms);
+
+        if (fields == 3 && strstr(line, "[stack]") != NULL) {
             // Get the system page size
             size_t page_size = getpagesize();
 
@@ -66,9 +68,6 @@ int main() {
                 printf("VADDR: 0x%016lx, PFN: 0x%016lx, PERMS: %s\n", addr, pfn, perms);
             }
         }
-
-        // Ignore the rest of the line
-        fscanf(maps_file, "%*[^\n]\n");
     }
 
     // Close the /proc/self/maps file
